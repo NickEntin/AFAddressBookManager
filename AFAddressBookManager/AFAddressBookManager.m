@@ -115,12 +115,12 @@
 
 + (NSString *)nameForContactWithPhoneNumber:(NSString *)phoneNumber
 {
-    return [AFAddressBookManager findContactWithPhoneNumber:phoneNumber].name;
+    return [AFAddressBookManager findContactWithPhoneNumber:[phoneNumber unformattedPhoneNumber]].name;
 }
 
 + (UIImage *)photoForContactWithPhoneNumber:(NSString *)phoneNumber
 {
-    return [AFAddressBookManager findContactWithPhoneNumber:phoneNumber].photo;
+    return [AFAddressBookManager findContactWithPhoneNumber:[phoneNumber unformattedPhoneNumber]].photo;
 }
 
 + (NSString *)nameForContactWithEmailAddress:(NSString *)emailAddress
